@@ -1,0 +1,5 @@
+Invoice Details:
+Client Name: Małgorzata Kozłowska
+Book Title: Echo Dawnych Czasów
+Rental Days: 20
+Total Cost: $12.0
