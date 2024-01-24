@@ -34,29 +34,29 @@ public class Main {
 
         client.rentBook(book);
         client.printInvoice(book, 25);
-        System.out.println(client.getCurrentLoanCount());
-        System.out.println(client.getTotalLoanCount());
+        System.out.println("Liczba obecnie wypożyczonych książek " + client.getCurrentLoanCount());
+        System.out.println("Liczba ogólnie wypożyczonych książek " + client.getTotalLoanCount());
         client.rentBook(bookList.get(4));
         client.returnBook(bookList.get(4));
-        System.out.println(client.getCurrentLoanCount());
-        System.out.println(client.getTotalLoanCount());
-        System.out.println(book.isAvailable());
-        System.out.println(bookList.get(4).isAvailable());
+        System.out.println("Liczba obecnie wypożyczonych książek " + client.getCurrentLoanCount());
+        System.out.println("Liczba ogólnej wypożyczonych książek " + client.getTotalLoanCount());
+        System.out.println("Czy książka jest dostępna " + book.isAvailable());
+        System.out.println("Czy książka jest dostępna " + bookList.get(4).isAvailable());
         clientList.get(3).rentBook(bookList.get(3));
+        System.out.println();
 
 
-        System.out.println(BookStatisticHelper.averageSentenceLength(book));//nie ma kropek XD
         BookStatisticHelper.calculateAverageBookAge(bookList);
-        System.out.println(BookStatisticHelper.calculateThisWord(book, "lorem"));
-        System.out.println(BookStatisticHelper.findLongestWord(book));
-        System.out.println(BookStatisticHelper.uniqueWordsCount(book));
+        System.out.println("Ilość wystąpień słowa Lorem " + BookStatisticHelper.calculateThisWord(book, "lorem"));
+        System.out.println("Najdłuższe słowo w książce: " + BookStatisticHelper.findLongestWord(book));
+        System.out.println("Liczba unikalnych słów: " + BookStatisticHelper.uniqueWordsCount(book));
 
 
-        System.out.println(ClientStatisticHelper.averageNumberOfLoans(clientList));
-        System.out.println(ClientStatisticHelper.mostBorrowedBooks(clientList));
+        System.out.println("Średnia ilość wypożyczeń: " + ClientStatisticHelper.averageNumberOfLoans(clientList));
+        System.out.println("Najczęściej wypożyczane książki: " +ClientStatisticHelper.mostBorrowedBooks(clientList));
         ClientStatisticHelper.calculateAverageAge(clientList);
 
-        BookFileHelpers.saveBookToFile(book);//warunki nie zapiswyania jeszcze raz
+        BookFileHelpers.saveBookToFile(book);
         Book book2 = new Book();
         //BookFileHelpers.createBookFromFile("aa");
 
