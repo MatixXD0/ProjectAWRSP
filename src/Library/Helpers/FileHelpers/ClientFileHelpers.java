@@ -38,13 +38,10 @@ public class ClientFileHelpers {
     public static List<String> readFromFile(String filePath) {
         List<String> list = new ArrayList<>();
         try (BufferedReader reader = new BufferedReader(new FileReader(filePath))) {
-
             String line;
-
             while ((line = reader.readLine()) != null) {
                 list.add(line);
             }
-
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         } catch (IOException e) {

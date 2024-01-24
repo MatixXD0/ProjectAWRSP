@@ -50,7 +50,6 @@ public class BookFileHelpers {
             String line;
             line=reader.readLine();
             String[] data = line.split(";");
-            System.out.println(data.length);
             book.setTitle(data[0]);
             book.setAuthorName(data[1]);
             book.setAuthorSurname(data[2]);

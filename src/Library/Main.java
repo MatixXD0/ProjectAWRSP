@@ -10,8 +10,6 @@ import Library.Helpers.FileHelpers.BookFileHelpers;
 import Library.Helpers.FileHelpers.ClientFileHelpers;
 import Library.Helpers.StatisticHelpers.BookStatisticHelper;
 import Library.Helpers.StatisticHelpers.ClientStatisticHelper;
-
-import java.util.ArrayList;
 import java.util.List;
 
 public class Main {
@@ -56,14 +54,14 @@ public class Main {
         System.out.println("Najczęściej wypożyczane książki: " +ClientStatisticHelper.mostBorrowedBooks(clientList));
         ClientStatisticHelper.calculateAverageAge(clientList);
 
-        BookFileHelpers.saveBookToFile(book);
-        Book book2 = new Book();
-        //BookFileHelpers.createBookFromFile("aa");
+//        System.out.println();
+//        BookFileHelpers.saveBookToFile(book);
+//        Book book2 = BookFileHelpers.createBookFromFile("./src/Ostatni Lot Feniksa Tomasz Zieliński.mobi");
+//        book2.printInfo();
 
 
         ClientFileHelpers.saveClientListToFile(clientList, "./src/clients.txt");
         ClientHelper.convertListOfStringsToListOfClients(ClientFileHelpers.readFromFile("./src/clients.txt"));
-
         ClientFileHelpers.saveInvoiceToFile(ClientHelper.createInvoiceContent(client, book, 20));
 
     }
